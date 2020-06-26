@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Bootstrap Query -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('Document-ready');		
+		});
+
+		$(function(){
+
+			$('.cm').click(function(){
+				$('.div1').animate({width:'300px',height:'500px'});
+			})
+
+			$('.rm').click(function(){
+				$('.div1').animate({width:'100px',height:'100px'});
+			})
+			
+
+
+
+
+
+			});
+
+	</script>
+
+	<div class="bg-success div1" style="width: 100px;height: 100px;"> </div>
+
+	<br>
+	<button class="cm">Click Me</button>
+	<button class="rm">Reset Me</button>
+
+</body>
+</html>

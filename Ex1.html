@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Bootstrap Query -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('Document-ready');		
+		});
+
+		$(function(){
+			$('.badge-primary').hide(1000);
+
+			$('.hide').click(function(){
+					$('.h1').hide(1000);
+			});
+			$('.sh').click(function(){
+				$('.h1').show(1000);
+			});
+
+			$('#tog').click(function(){
+				$('.t1').toggle();
+			});
+			/*Fade  In*/
+			$('#fadein').click(function(){
+				$('span.fin-normal').fadeIn();
+				$('span.fin-fast').fadeIn('fast');
+				$('span.fin-slow').fadeIn('slow');
+				$('span.fin-second').fadeIn(300);
+			});
+
+			$('#fadeout').click(function(){
+				$('span.fadeout-normal').fadeOut();
+				$('span.fadeout-fast').fadeOut('fast');
+				$('span.fadeout-slow').fadeOut('slow');
+				$('span.fadeout-second').fadeOut(300);
+			});
+
+			$('#fadetoggle').click(function(){
+				$('span.fadet-normal').fadeToggle();
+				$('span.fadet-fast').fadeToggle('fast');
+				$('span.fadet-slow').fadeToggle('slow');
+				$('span.fadet-second').fadeToggle(300);
+			});
+
+			$('#slideup').click(function(){
+				$('.slideuptext').slideUp('slow');
+			});
+			$('#slidedown').click(function(){
+				$('.slidedowntext').slideDown('slow');
+			});
+
+			$('#slidetoggle').click(function(){
+				$('.slidetoggletext').slideToggle('slow');
+			});
+
+			$('#animatebtn').click(function(){
+				$('.firstanimatebox').animate({left:'500px',opacity:0.5})
+			})
+
+		});
+
+	</script>
+
+	<div class="jumbotron">
+		<h1 class="display-3">Show/Hide Function</h1>
+	</div>
+	<br>
+	<br>
+	<h2>Show / Hide/ Toggle</h2>
+
+	<div class="ml-5">
+	<span class="badge badge-primary">Auto Hide</span>
+	<span class="badge badge-dark h1">Click To Hide</span>
+	<span class="badge badge-success t1">Toggle Between Showing And Hiding</span>
+	<br>
+	<button class="btn btn-dark hide">HIDE</button>
+	<button class="btn btn-primary sh">SHOW</button>
+	<button class="btn btn-success"  id="tog">Toggle</button>
+	</div>
+	<br>
+	<br>
+
+
+	<h2>Fade In/ Out / Toggle</h2>
+	<div class="ml-5">
+		<span class="badge badge-warning fin-normal" style="display: none;">Fade In </span>
+		<span class="badge badge-warning fin-fast" style="display: none;">Fade In Fast</span>
+		<span class="badge badge-warning fin-slow" style="display: none;">Fade In Slow</span>
+		<span class="badge badge-warning fin-second" style="display: none;">Fade In 300ms</span>
+		<br>
+
+		<span class="badge badge-danger fadeout-normal ">Fade Out </span>
+		<span class="badge badge-danger fadeout-fast">Fade Out Fast</span>
+		<span class="badge badge-danger fadeout-slow">Fade Out Slow</span>
+		<span class="badge badge-danger fadeout-second">Fade Out 300ms</span>
+		<br>
+		<span class="badge badge-danger fadet-normal">Fade Toggle </span>
+		<span class="badge badge-danger fadet-fast">Fade Toggle Fast </span>
+		<span class="badge badge-danger fadet-slow">Fade Toggle Slow</span>
+		<span class="badge badge-danger fadet-second">Fade Toggle 300ms</span>
+		<br>
+		<br>
+	<button class="btn btn-warning" id="fadein">Fade in</button>
+	<button class="btn btn-danger" id="fadeout">Fade Out</button>
+	<button class="btn btn-dark" id="fadetoggle">Fade Toggle</button>
+
+	</div>
+
+
+	<h2>Slide Up / Down / Toggle</h2>
+
+	<div class="ml-5">
+		<div class="row">
+			<div class="col-md-4 mb-3">
+				<div class="bg-info " id="slideup">Click to Slide up panel</div>
+				<div class="py-5 pl-3 bg-secondary slideuptext">Slide Up Text</div>
+			</div>
+			<div class="col-md-4 mb-3">
+				<div class="bg-primary" id="slidedown">Click to Slide down panel</div>
+				<div class="py-5 pl-3 bg-secondary slidedowntext" style="display: none;">Slide DOWN Text</div>
+			</div>
+			<div class="col-md-4 mb-3">
+				<div class="bg-info" id="slidetoggle">Click to Slide toggle panel</div>
+				<div class="py-5 pl-3 bg-secondary slidetoggletext">Slide Toggle Text</div>
+			</div>
+		</div>
+
+		<div class="row mt-5">
+			<h3>Animation</h3>
+
+			<div class="col-12">
+				<div class="bg-success h-50 mb-5 text-white w-25 text-center position-absolute py-5 firstanimatebox">
+				Animation Div
+				</div>
+				<br>
+				<br>
+				<br>
+
+				<button class="btn btn-success d-block mt-5" id="animatebtn">Click to Animate</button>
+
+				
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

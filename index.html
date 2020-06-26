@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Bootstrap Query -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	
+<style type="text/css">
+	.big{
+		text-shadow: 2px 2px 4px #000;
+		color: yellow;
+		text-align: center;
+	}
+</style>
+	
+	
+</head>
+<body>
+<p class="p1">Hello World One</p>
+	<p class="p2">Hello World Two</p>
+	<p class="p3">Hello World Three</p>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('Document-ready');		
+		});
+
+		$(function(){
+			console.log('shorthand for document ready function');
+			//readyfn();Function Call
+			$('#content').find('h3').html('new text for h3!');
+			//$('#content').find('p').html('HELLO WORLD!');
+			$('p').html('hello world');
+			$('#content p:first').html('New<strong>First</strong>Paragraph')
+			//setting an individual property
+			$('#content h3').css('font-size','50px');
+			//setting multiple properties
+			$('p').css({'font-size':'20px','color':'blue'});
+			//addClass
+			$('h1').addClass('big');
+
+			//removeClass
+			$('h1').removeClass('hello');
+
+			//Single Attribute
+			$('a.facebook').attr('href','https://www.facebook.com/');
+			//Multiple Attribute
+			$('a.instagram').attr({
+				'title':'Instagram',
+				'href':'https://www.instagram.com/'});
+
+			$('.p1').addClass('bg-success text-white d-inline');
+			$('.p2').addClass('bg-warning text-dark d-block');
+			$('.p3').addClass('bg-danger display-3');
+
+			$('h1').click(function(){
+				console.log('click h1');
+			});
+			$('h3').bind('click',function(){
+				$('h3').addClass('text-success'); 
+			});
+
+			$('p').bind({
+				'click':function(){
+					console.log('click p');
+				},
+				'mouseover':function(){
+					console.log('mousehover p');
+				}
+			});
+
+			/*get text*/
+			$('#showtextbtn').click(function(){
+				var text=$('#hello').text();
+				console.log(text);
+			});
+
+			/*get html*/
+			$('#showhtmlbtn').click(function(){
+				var html=$('#hello').html();
+				console.log(html);
+			});
+
+			/*get attribute*/
+
+			$('#showattrbtn').click(function(){
+				var attr=$('.google').attr('href');
+				console.log(attr);
+			});
+			/*Get Value*/
+			$('#showvaluebtn').click(function(){
+				var valtext=$('#name').val();
+				console.log(valtext);
+			});
+
+			$('#settextbtn').click(function(){
+				$('#hello').text('JP Batch -1');
+			});
+
+			$('#sethtmlbtn').click(function(){
+				$('#hello').html('<i>JP Batch-1');
+			});
+
+			$('#setattrbtn').click(function(){
+				$('.google').attr('href','http://www.facebook.com');
+			});
+
+			$('#setattrbtn').click(function(){
+				$('.google').attr('href','http://www.facebook.com');
+			});
+
+			$('#setvalbtn').click(function(){
+				$('#email').val('admin@gmail.com');
+			});
+
+
+		});
+
+
+		
+
+		function readyfn(){
+			console.log('this is readyfn');
+		}
+		$(document).ready(readyfn);/*Function Call no need  ()*/
+
+		/*JS*/
+		/*document.getElementsByClassName('aa')*/
+
+		//JQuery
+		//$('.aa');
+		//('div.aa');
+		/*
+		<div>
+			<p class="aa"></div>
+		<section>
+			<p class="aa"></p>
+		</section>*/
+/*$('div#contents ul.people li')*/
+
+	</script>
+
+	<button class="btn btn-success" id="showtextbtn">Show Text</button>
+	<button class="btn btn-secondary" id="showhtmlbtn">Show HTML</button>
+	<button class="btn btn-warning" id="showattrbtn">Show Attribute</button>
+
+	<div class="row">
+		<div class="col-12">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+				</div>
+				<button type="button" class="btn btn-primary mb-2" id="showvaluebtn">Save</button>
+			</form>
+		</div>
+	</div>
+
+	<button class="btn btn-success" id="settextbtn">Set Text</button>
+	<button class="btn btn-success" id="sethtmlbtn">Set HTML</button>
+	<button class="btn btn-success" id="sethtmlbtn">Set Attribute</button>
+	<button class="btn btn-primary" id="setvalbtn">Set Value</button>
+
+	<div class="row">
+		<div class="col-12">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="name">Email:</label>
+					<input type="text" name="name" class="form-control" id="email" placeholder="Enter Name" value="yinwaiaungcsf1@gmail.com">
+				</div>
+				<button type="button" class="btn btn-primary mb-2" id="showvaluebtn">Save</button>
+			</form>
+		</div>
+	</div>
+
+	 <h1 id="hello"><b>HELLO WORLD</b></h1>
+	<a href="https://www.google.com/" target="_blank" title="Google" class="google">Google</a>
+	<a href="" class="facebook">Facebook</a>
+	<a href="" class="instagram">Instagram</a>
+
+	<div id="content">
+		<h3>Testing</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		</p>
+		<p>
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore
+	    </p>
+		<p>eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		
+	</div> 
+
+	
+
+	
+
+</body>
+</html>
